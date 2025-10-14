@@ -9,10 +9,35 @@
     />
     <meta name="author" content="Auna McFadden" />
     <title>HTML Cheatsheet</title>
+    <style> 
+      input, textarea, label{
+        display:block;
+      }
+    </style>
   </head>
 
   <body>
     <h1>HTML5 Cheatsheet</h1>
+    <section id="form">
+      <form action="processing-script.php" method="post">
+        <fieldset>
+          <legend>Personal Info</legend>
+          <label for="cust-name">Customer Name</label>
+          <input type="text" id="cust-name" name="cust-name" placeholder="Enter your name"/>
+          <label for="address">Address:</label>
+          <textarea id="address" name="address"></textarea>
+          <label for="fav-color">Favorite Color</label>
+          <select id="fav-color" name="fav-color">
+            <option value="R">Red</option>
+            <option value="G">Green</option>
+            <option value="B">Blue</option>
+            <option selected>---</option>
+          </select>
+          <input type="submit" value="Take me to your leader"/>
+        </fieldset>
+
+      </form>
+    </section>
     <section id="images">
         <h2>Images</h2>
         <img src="assets/img/golden-retriever-puppy-3783509_1280.jpg" alt="Golden Retriever Puppy"/>

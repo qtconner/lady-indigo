@@ -1,0 +1,23 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body{
+    background-color:darkolivegreen;
+    font-family: "Yellowtail", cursive;
+}
+main{
+    background-color:#ffffff
+    width:80vw;
+    text-align:center;
+  margin-top: 40px;
+  margin-right: auto;
+  margin-bottom: 40px;
+  /*Shorthand */
+  margin-left: auto;
+  margin: 40px auto 40px auto;
+  border: 8px dotted #0ABFBF
+  border-radius: 10px
+}

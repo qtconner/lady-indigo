@@ -1,0 +1,10 @@
+body {
+    background-color:rgb(10, 17, 15);
+    border:4px dotted #ffffff;
+    margin:40px auto;
+    width:90vw;
+    max-width:980px;
+}
+h1 {color:beige;
+    text-align:center;
+}

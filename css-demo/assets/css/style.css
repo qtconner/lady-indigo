@@ -19,7 +19,7 @@ img {
 
 
 body{
-background-color:#101340;  
+background-color:#d9a68f;  
 font-family: "Rubik", sans-serif;
 }
 
@@ -34,17 +34,17 @@ main{
   /*Shorthand */
   margin: 40px auto;
   margin: 40px auto 40px auto;
-  border: 2px solid #0ABFBF;
+  border: 2px solid #0d0f0f;
   border-radius: 5px;
 }
 header.primary{
-background-color:#8fbdd9;
+background-color:#d9a68f;
 padding:20px; 
 background-image:url("https://assets.codepen.io/7248/bg_1.png"); 
 background-repeat:no-repeat;  
 background-size:cover;  
 background-position: center;
-border:3px solid #0ABFBF;  
+border:3px solid #bf3d0a;  
 display:flex;  
 justify-content:space-between;  
 }
@@ -70,8 +70,8 @@ header.primary nav ul li a{
   display:block;
   margin-bottom:10px;
   background: rgba(0,0,0,.6);
-  border:1px solid #cc3a67;
-  border-right:10px solid #cc3a67;
+  border:1px solid #cc3a3a;
+  border-right:10px solid #cc3a3a;
   border-radius:20px 0;
   padding: 10px 10px 10px 0;
   text-align:right;
@@ -108,16 +108,16 @@ line-height:1.6;
 
 #content h2, #content h3, .widget header h2{
   color:#161A59;
-  border-left: 7.5px solid #d94179;
+  border-left: 7.5px solid #d94141;
   border-radius:15px 0;
   padding:5px 7.5px 0 5px;
 }
 
 #blog{
-  background-color:#104d73;
+  background-color:#6e271b;
   padding:20px 0;
-  border-top:6px double #0a96a6;
-  border-bottom:6px double #0a96a6;
+  border-top:6px double #cc3a3a;
+  border-bottom:6px double #cc3a3a;
 }
 
 #blog > h2{

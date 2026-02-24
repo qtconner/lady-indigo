@@ -1,48 +1,155 @@
-body { font-family: sans-serif; text-align: center; background: #f9f9f9; }
+/* --- Global Styles & Branding --- */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #2c3e50;
+    margin: 0;
+    padding: 40px 20px;
+    text-align: center;
+}
 
-/* Tree container */
+header {
+    margin-bottom: 50px;
+}
+
+h1 {
+    color: #1a252f;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-style: italic;
+    color: #7f8c8d;
+    margin-top: 0;
+}
+
+/* --- Restart Button Style --- */
+#restart-btn {
+    margin-bottom: 30px;
+    padding: 10px 25px;
+    background-color: #34495e;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+#restart-btn:hover {
+    background-color: #2c3e50;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* --- The Tree Structure --- */
+.tree {
+    display: inline-block;
+    white-space: nowrap;
+}
+
 .tree ul {
-    padding-top: 20px; position: relative;
-    display: flex; justify-content: center;
+    padding-top: 20px; 
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .tree li {
-    float: left; text-align: center;
+    text-align: center;
     list-style-type: none;
     position: relative;
-    padding: 20px 5px 0 5px;
+    padding: 20px 10px 0 10px;
 }
 
-/* Connecting lines */
+/* --- Connector Lines --- */
 .tree li::before, .tree li::after {
     content: '';
-    position: absolute; top: 0; right: 50%;
-    border-top: 2px solid #ccc;
-    width: 50%; height: 20px;
+    position: absolute; 
+    top: 0; 
+    right: 50%;
+    border-top: 2px solid #bdc3c7;
+    width: 50%; 
+    height: 20px;
 }
+
 .tree li::after {
-    right: auto; left: 50%;
-    border-left: 2px solid #ccc;
+    right: auto; 
+    left: 50%;
+    border-left: 2px solid #bdc3c7;
 }
 
-/* Remove connectors from single/first/last children */
-.tree li:only-child::after, .tree li:only-child::before { display: none; }
-.tree li:only-child { padding-top: 0; }
-.tree li:first-child::before, .tree li:last-child::after { border: 0 none; }
+.tree li:only-child::after, .tree li:only-child::before {
+    display: none;
+}
 
-/* Node Styling */
+.tree li:only-child {
+    padding-top: 0;
+}
+
+.tree li:first-child::before, .tree li:last-child::after {
+    border: 0 none;
+}
+
+.tree ul ul::before {
+    content: '';
+    position: absolute; 
+    top: 0; 
+    left: 50%;
+    border-left: 2px solid #bdc3c7;
+    width: 0; 
+    height: 20px;
+}
+
+/* --- Node Boxes --- */
 .tree li div {
-    border: 2px solid #ccc;
-    padding: 10px 15px;
-    background: white;
+    border: 2px solid #2980b9; /* NPro Blue */
+    padding: 15px 20px;
+    background: #ffffff;
     display: inline-block;
     border-radius: 8px;
     font-size: 14px;
+    font-weight: 500;
+    min-width: 160px;
+    max-width: 260px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
 }
 
-/* Highlighting the result (Leaf) */
+.tree li div:hover {
+    background: #ebf5fb;
+    transform: translateY(-3px);
+}
+
+/* --- Clickable Leaf Nodes --- */
 .tree li div.is-leaf {
-    border-color: #4CAF50;
-    background-color: #e8f5e9;
+    border-color: #27ae60; /* Success Green */
+    background-color: #ecfdf5;
+    padding: 0; /* Let the link fill the space */
+    overflow: hidden;
+}
+
+.leaf-link {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #1e8449;
     font-weight: bold;
+}
+
+.tree li div.is-leaf:hover {
+    background-color: #d1fae5;
+    border-color: #10b981;
+}
+
+/* Footer text inside the button box */
+.tree li div.is-leaf::after {
+    content: "VIEW RESOURCE";
+    display: block;
+    font-size: 9px;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    color: #059669;
+    opacity: 0.8;
 }

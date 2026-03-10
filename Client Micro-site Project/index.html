@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NPRo | Dr. Lupita Roy-Rasheed</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+
+<body>
+
+  <!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+       FLOATING NAV
+  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
+  <nav class="nav">
+    <button class="nav-btn active" onclick="showPage('home', this)">Home</button>
+    <button class="nav-btn" onclick="showPage('tool', this)">501(c)(3) Tool</button>
+    <button class="nav-btn" onclick="showPage('assessment', this)">Capacity</button>
+    <button class="nav-btn" onclick="showPage('contact', this)">Connect</button>
+  </nav>
+
+
+  <!-- ══════════════════════════════════════════════════
+       PAGE 1 — HOME
+  ══════════════════════════════════════════════════ -->
+  <section id="home" class="page active">
+
+    <!-- Top bar -->
+    <header class="home-topbar">
+      <div class="home-logo">NP<span>Ro</span></div>
+      <div class="home-tagline-top">NONPROFIT MANAGEMENT CONSULTING</div>
+    </header>
+
+    <!-- Hero grid -->
+    <div class="home-hero">
+
+      <!-- Left: headline + CTAs -->
+      <div class="home-hero-left">
+        <p class="home-eyebrow">Dr. Lupita Roy-Rasheed &nbsp;·&nbsp; Principal Consultant</p>
+        <h1 class="home-h1">
+          Nonprofits<br/><em>built</em> to<br/>last.
+        </h1>
+        <p class="home-desc">
+          Strategic consulting for mission-driven organizations. From governance
+          restructuring to 501(c)(3) readiness — NPRo partners with nonprofits
+          at every stage.
+        </p>
+        <div class="cta-group">
+          <button class="btn-primary"
+            onclick="showPage('assessment', document.querySelectorAll('.nav-btn')[2])">
+            Assess Your Capacity
+          </button>
+          <button class="btn-ghost"
+            onclick="showPage('tool', document.querySelectorAll('.nav-btn')[1])">
+            501(c)(3) Tool →
+          </button>
+        </div>
+      </div>
+
+      <!-- Right: stat cards -->
+      <div class="home-hero-right">
+        <div class="stat-card">
+          <div class="stat-num">12+</div>
+          <div class="stat-label">Years guiding nonprofit leaders through transformation</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">501</div>
+          <div class="stat-label">Organizations supported in filing &amp; compliance</div>
+        </div>
+        <div class="stat-card span2">
+          <div class="stat-num">EOMC <span style="font-size:1.4rem;color:var(--clay)">→</span> NPRo</div>
+          <div class="stat-label">Evolved from Effective Organization Management Consulting — same rigor, sharper focus</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services pill strip -->
+    <div class="home-services">
+      <div class="service-pill">Board Governance</div>
+      <div class="service-pill">Strategic Planning</div>
+      <div class="service-pill">501(c)(3) Readiness</div>
+      <div class="service-pill">Financial Health</div>
+      <div class="service-pill">Organizational Audits</div>
+      <div class="service-pill">Leadership Development</div>
+      <div class="service-pill">Fundraising Strategy</div>
+      <div class="service-pill">Policy Restructuring</div>
+    </div>
+
+    <!-- Formerly banner -->
+    <div class="home-formerly">FORMERLY EOMC — EFFECTIVE ORGANIZATION MANAGEMENT CONSULTING</div>
+
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════
+       PAGE 2 — 501(c)(3) DECISION TOOL
+  ══════════════════════════════════════════════════ -->
+  <section id="tool" class="page">
+
+    <!-- Teal header band -->
+    <div class="tool-header">
+      <span class="label">Interactive Decision Tool</span>
+      <h2>501(c)(3) Status Navigator</h2>
+      <p>Answer a few questions to determine your organization's tax-exempt status
+         and the correct IRS application path.</p>
+    </div>
+
+    <!-- Progress bar strip -->
+    <div class="tool-progress-wrap">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <span class="progress-label" id="progress-label">Step 1 of 6</span>
+    </div>
+
+    <!-- Question card — content managed by script.js -->
+    <div class="tool-body">
+      <div class="q-card" id="q-card">
+        <div class="q-step" id="q-step">Question 1 of 6</div>
+        <div class="q-text" id="q-text">Does your organization currently hold 501(c)(3) tax-exempt status from the IRS?</div>
+        <div class="q-sub" id="q-sub">This is the federal tax exemption for charitable, religious, and educational organizations.</div>
+        <div class="q-choices" id="q-choices">
+          <button class="q-btn" onclick="decide('yes')">Yes, we do</button>
+          <button class="q-btn secondary" onclick="decide('no')">No, not yet</button>
+        </div>
+      </div>
+
+      <!-- Shown only after reaching a result -->
+      <button class="tool-reset" id="tool-reset" onclick="resetTool()" style="display:none">
+        ↺ &nbsp; Start Over
+      </button>
+    </div>
+
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════
+       PAGE 3 — CAPACITY ASSESSMENT
+  ══════════════════════════════════════════════════ -->
+  <section id="assessment" class="page">
+
+    <!-- Header band -->
+    <div class="cap-header">
+      <div>
+        <span class="label">Organizational Diagnostic</span>
+        <h2>Capacity Assessment</h2>
+      </div>
+      <p>Select any pillar to uncover the most common gaps NPRo identifies
+         in that area — and how we address them.</p>
+    </div>
+
+    <!-- Pillar cards injected here by buildPillars() in script.js -->
+    <div class="cap-grid" id="cap-grid">
+      <!-- JS-rendered content -->
+    </div>
+
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════
+       PAGE 4 — CONNECT
+  ══════════════════════════════════════════════════ -->
+  <section id="contact" class="page">
+
+    <div class="contact-grid">
+
+      <!-- Left column: intro + testimonials -->
+      <div class="contact-left">
+        <div>
+          <span class="label">Work with NPRo</span>
+          <h2 class="contact-h2">Let's build something that lasts.</h2>
+          <p class="contact-intro">
+            Dr. Roy-Rasheed works with emerging and established nonprofits ready to
+            operate with intention. Share your challenge and we'll find the right
+            path forward together.
+          </p>
+        </div>
+
+        <div class="testimonials">
+          <div class="testimonial">
+            <p>Dr. Roy-Rasheed clarified our entire mission and governance structure
+               in a single strategy session. We left with a roadmap we actually use.</p>
+            <cite>— Executive Director, Community Health Alliance</cite>
+          </div>
+          <div class="testimonial">
+            <p>The best investment we've made. NPRo helped us secure our 501(c)(3)
+               and restructure our board within three months.</p>
+            <cite>— Founder, Youth Arts Coalition</cite>
+          </div>
+          <div class="testimonial">
+            <p>If you're an emerging nonprofit, Dr. Roy-Rasheed is the consultant
+               you need. She speaks the language of mission-driven work.</p>
+            <cite>— Program Director, Regional Education Fund</cite>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: inquiry form -->
+      <div class="contact-right">
+        <span class="label">Inquiry Form</span>
+        <h3>Start a Conversation</h3>
+
+        <!-- Form fields — hidden on successful submit -->
+        <div id="contact-form-wrap">
+          <div class="field-group">
+
+            <div>
+              <span class="field-label">Organization Name</span>
+              <input type="text" id="f-org" class="field-input"
+                     placeholder="Your nonprofit's name" />
+            </div>
+
+            <div>
+              <span class="field-label">Your Email</span>
+              <input type="email" id="f-email" class="field-input"
+                     placeholder="you@organization.org" />
+            </div>
+
+            <div>
+              <span class="field-label">Area of Interest</span>
+              <div class="service-select" id="service-select">
+                <div class="service-opt" onclick="toggleService(this)">Board Governance</div>
+                <div class="service-opt" onclick="toggleService(this)">501(c)(3) Filing</div>
+                <div class="service-opt" onclick="toggleService(this)">Strategic Planning</div>
+                <div class="service-opt" onclick="toggleService(this)">Financial Health</div>
+                <div class="service-opt" onclick="toggleService(this)">Capacity Audit</div>
+                <div class="service-opt" onclick="toggleService(this)">Other</div>
+              </div>
+            </div>
+
+            <div>
+              <span class="field-label">Describe Your Challenge</span>
+              <textarea id="f-msg" class="field-input"
+                        placeholder="What's your organization working through right now?"></textarea>
+            </div>
+
+            <button class="submit-btn" onclick="handleSubmit()">Send Inquiry →</button>
+
+          </div>
+        </div>
+
+        <!-- Success confirmation — shown after valid submit -->
+        <div class="success-msg" id="success-msg">
+          <div class="success-icon">✓</div>
+          <h4>Message Received</h4>
+          <p>Dr. Roy-Rasheed will review your inquiry and be in touch within 2 business days.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer lives inside the contact page -->
+    <footer class="site-footer">
+      <span>© 2026 NPRo | Dr. Lupita Roy-Rasheed</span>
+      <span>Formerly Effective Organization Management Consulting (EOMC)</span>
+    </footer>
+
+  </section>
+
+
+  <!-- Scripts -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>

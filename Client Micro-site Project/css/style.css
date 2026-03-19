@@ -8,13 +8,13 @@
 
 /* ─── DESIGN TOKENS ─────────────────────────────────────── */
 :root {
-  --teal:    #2a5758;
-  --teal-lt: #3d7a7b;
+  --blue-dark:    #036;
+  --blue-main: #005b96;
   --sand:    #e8d9c4;
   --cream:   #f5f0e8;
   --ink:     #0f1512;
-  --clay:    #b85c38;
-  --clay-lt: #d4714a;
+  --red-main:    #b83838;
+  --red-lt: #d44a4a;
   --fog:     #dcd6cd;
   --white:   #fdfcfa;
 
@@ -78,7 +78,7 @@ body::before {
   white-space: nowrap;
 }
 .nav-btn:hover  { color: var(--sand); }
-.nav-btn.active { background: var(--teal); color: var(--sand); }
+.nav-btn.active { background: var(--blue-dark); color: var(--sand); }
 
 /* ─── PAGE SHELLS ───────────────────────────────────────── */
 .page {
@@ -104,7 +104,7 @@ body::before {
   font-size: .7rem;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--clay);
+  color: var(--red-main);
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -129,7 +129,7 @@ body::before {
   letter-spacing: .04em;
   color: var(--sand);
 }
-.home-logo span { color: var(--clay); }
+.home-logo span { color: var(--red-main); }
 .home-tagline-top {
   font-family: var(--ff-mono);
   font-size: .68rem;
@@ -150,7 +150,7 @@ body::before {
   font-family: var(--ff-mono);
   font-size: .72rem;
   letter-spacing: .15em;
-  color: var(--clay);
+  color: var(--red-main);
   text-transform: uppercase;
   margin-bottom: 24px;
 }
@@ -162,7 +162,7 @@ body::before {
   color: var(--sand);
   margin-bottom: 32px;
 }
-.home-h1 em { color: var(--clay); font-style: italic; }
+.home-h1 em { color: var(--red-main); font-style: italic; }
 .home-desc {
   font-size: 1.05rem;
   line-height: 1.7;
@@ -175,7 +175,7 @@ body::before {
 /* CTA buttons */
 .cta-group { display: flex; gap: 14px; flex-wrap: wrap; }
 .btn-primary {
-  background: var(--clay);
+  background: var(--red-main);
   color: var(--cream);
   border: none;
   padding: 14px 30px;
@@ -186,7 +186,7 @@ body::before {
   cursor: pointer;
   transition: background .3s var(--ease), transform .2s;
 }
-.btn-primary:hover { background: var(--clay-lt); transform: translateY(-2px); }
+.btn-primary:hover { background: var(--red-lt); transform: translateY(-2px); }
 .btn-ghost {
   background: transparent;
   color: rgba(232, 217, 196, .7);
@@ -265,7 +265,7 @@ body::before {
 #tool { background: var(--white); }
 
 .tool-header {
-  background: var(--teal);
+  background: var(--blue-dark);
   color: var(--cream);
   padding: 72px 48px 60px;
 }
@@ -302,7 +302,7 @@ body::before {
 }
 .progress-fill {
   height: 100%;
-  background: var(--clay);
+  background: var(--red-main);
   border-radius: 99px;
   transition: width .5s var(--ease);
   width: 14%;
@@ -332,13 +332,13 @@ body::before {
   position: absolute;
   top: 0; left: 0;
   width: 4px; height: 100%;
-  background: var(--teal);
+  background: var(--blue-dark);
   border-radius: 4px 0 0 4px;
 }
 .q-step {
   font-family: var(--ff-mono);
   font-size: .68rem;
-  color: var(--clay);
+  color: var(--red-main);
   letter-spacing: .12em;
   text-transform: uppercase;
   margin-bottom: 16px;
@@ -377,7 +377,7 @@ body::before {
   transition: background .25s, transform .2s;
   min-width: 130px;
 }
-.q-btn:hover { background: var(--teal); transform: translateY(-2px); }
+.q-btn:hover { background: var(--blue-dark); transform: translateY(-2px); }
 .q-btn.secondary { background: var(--fog); color: var(--ink); }
 .q-btn.secondary:hover { background: var(--sand); }
 
@@ -386,9 +386,9 @@ body::before {
   border-radius: 16px;
   padding: 44px;
 }
-.result-card.short       { background: var(--teal); color: var(--cream); }
+.result-card.short       { background: var(--blue-dark); color: var(--cream); }
 .result-card.long        { background: var(--ink);  color: var(--cream); }
-.result-card.established { background: var(--clay); color: var(--cream); }
+.result-card.established { background: var(--red-main); color: var(--cream); }
 .result-card.no-need     { background: var(--fog);  color: var(--ink);   }
 .result-icon  { font-size: 2.5rem; margin-bottom: 16px; }
 .result-tag {
@@ -438,7 +438,7 @@ body::before {
   align-items: center;
   gap: 8px;
 }
-.tool-reset:hover { color: var(--clay); }
+.tool-reset:hover { color: var(--red-main); }
 
 /* ══════════════════════════════════════════════════════════
    PAGE 3 — CAPACITY ASSESSMENT
@@ -500,7 +500,7 @@ body::before {
 }
 .pillar-icon {
   width: 36px; height: 36px;
-  background: var(--teal);
+  background: var(--blue-dark);
   border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
   font-size: 1.1rem;
@@ -529,10 +529,10 @@ body::before {
   padding: 20px;
   background: var(--cream);
   border-radius: 10px;
-  border-left: 3px solid var(--clay);
+  border-left: 3px solid var(--red-main);
 }
 .pillar-detail p { font-size: .82rem; line-height: 1.6; color: var(--ink); }
-.pillar-detail strong { color: var(--clay); }
+.pillar-detail strong { color: var(--red-main); }
 .pillar-chevron {
   display: block;
   width: 24px; height: 24px;
@@ -590,7 +590,7 @@ body::before {
   top: -10px; left: 20px;
   font-family: var(--ff-head);
   font-size: 3rem;
-  color: var(--clay);
+  color: var(--red-main);
   line-height: 1;
 }
 .testimonial p { font-size: .88rem; line-height: 1.65; color: rgba(232, 217, 196, .7); }
@@ -601,7 +601,7 @@ body::before {
   font-family: var(--ff-mono);
   font-size: .68rem;
   letter-spacing: .1em;
-  color: var(--clay);
+  color: var(--red-main);
 }
 
 /* Right column — form */
@@ -639,7 +639,7 @@ body::before {
   transition: border-color .25s;
 }
 .field-input:focus {
-  border-color: var(--teal-lt);
+  border-color: var(--blue-lt);
   background: rgba(232, 217, 196, .08);
 }
 .field-input::placeholder { color: rgba(232, 217, 196, .2); }
@@ -664,15 +664,15 @@ textarea.field-input { resize: vertical; min-height: 120px; }
   user-select: none;
 }
 .service-opt.selected {
-  background: var(--teal);
-  border-color: var(--teal);
+  background: var(--blue-dark);
+  border-color: var(--blue-dark);
   color: var(--cream);
 }
 
 /* Submit */
 .submit-btn {
   width: 100%;
-  background: var(--clay);
+  background: var(--red-main);
   color: var(--cream);
   border: none;
   padding: 16px;
@@ -684,7 +684,7 @@ textarea.field-input { resize: vertical; min-height: 120px; }
   margin-top: 8px;
   transition: background .25s, transform .2s;
 }
-.submit-btn:hover { background: var(--clay-lt); transform: translateY(-2px); }
+.submit-btn:hover { background: var(--red-lt); transform: translateY(-2px); }
 
 /* Success state */
 .success-msg {

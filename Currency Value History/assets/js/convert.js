@@ -41,7 +41,7 @@ async function convCurrency() {
 
 
             let numDays = msg.results.length;
-                        if (numDays > 0) {
+            if (numDays > 0) {
                 for (let i = 0; i < numDays; i++) {
                     currencyValue[i] = msg.results[i].c;
 

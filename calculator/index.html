@@ -4,52 +4,52 @@
     <meta charset="UTF-8">
     <meta name="description" content="JavaScript Calculator">
     <meta name="keywords" content="JavaScript, HTML, CSS">
-    <meta name="author" content="Shakera Couch">
+    <meta name="author" content="Auna Conner">
     <title>JavaScript Calculator</title>
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
 </head>
 <body>
 <form id="myform">
     <div class="formcontainer" onsubmit="return false">
-        <h1>Calculator</h1>
+        <h1>Javascript Calculator</h1>
         <fieldset id="detail">
             <legend>Calculator</legend>  
             <br>
            
             <label class="formlabel" for="Operand1">Operand 1: </label>
-            <input type="text" id="Operand1" name="Operand1" size="15" maxlength="15"      
+            <input type="text" id="Operand1" name="Operand1" length="5" maxlength="5"        
                    data-rule-required="true"  data-msg-required="Operand 1 is Required"
                    data-rule-number="true" data-msg-number="Operand 1 must be a Number">
             <label class="error" for="Operand1" id="Operand1Error"></label>
             <br><br>
-     
-            <label class="formlabel" for="Operand2">Operand 2: </label>
-            <input type="text" id="Operand2" name="Operand2" size="15" maxlength="15"      
-                   data-rule-required="true"  data-msg-required="Operand 2 is Required"
-                   data-rule-number="true" data-msg-number="Operand 2 must be a Number">
-            <label class="error" for="Operand2" id="Operand2Error"></label>
-            <br><br>
-
-
 
 
             <label class="formlabel">Operator: </label>
-                <label for="AddOperator">
-                    <input type="radio" name="Operator" id="AddOperator" value="Add"
-                           data-rule-required="true" data-msg-required="Operator is Required" />Add
+                <label for="addOperator">
+                    <input type="radio" name="Operator" id="addOperator" value="Add"
+                           data-rule-required="true" data-msg-required="Operator is Required" />+
                 </label>
-                <label for="SubOperator">
-                    <input type="radio" name="Operator" id="SubOperator" value="Sub">Subtract
+                <label for="subOperator">
+                    <input type="radio" name="Operator" id="subOperator" value="Subtract">-
                 </label>
-                <label for="MulOperator">
-                    <input type="radio" name="Operator" id="MulOperator" value="Mul">Multiply
+                <label for="multOperator">
+                    <input type="radio" name="Operator" id="multOperator" value="Multiply">*
                 </label>
-                <label for="DivOperator">
-                    <input type="radio" name="Operator" id="DivOperator" value="Div">Divide
+                <label for="divOperator">
+                    <input type="radio" name="Operator" id="divOperator" value="Divide">/
                 </label>
             <label for="Operator" class="error" id="OperatorError"></label>
+            <br><br>
+
+
+            <label class="formlabel" for="Operand2">Operand 2: </label>
+            <input type="text" id="Operand2" name="Operand2" length="5" maxlength="5"      
+                   data-rule-required="true"  data-msg-required="Operand 2 is Required"
+                   data-rule-number="true" data-msg-number="Operand 2 must be a Number">
+            <label class="error" for="Operand2" id="Operand2Error"></label>
             <br><br>
 
 
@@ -65,6 +65,6 @@
         </fieldset>
     </div>
 </form>
-<script src="assets/scripts/minmaxavg.js"></script>
+<script src="assets/js/calculator.js"></script>
 </body>
 </html>

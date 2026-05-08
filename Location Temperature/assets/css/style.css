@@ -1,0 +1,89 @@
+html {
+    box-sizing: border-box;
+}
+
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
+body {
+    background-color: var(--main-bg-color);
+    background-size: auto;
+    font-family: "Bebas Neue", sans-serif;
+    overflow: auto;
+}
+
+
+main {
+    margin: 40px auto;
+    width: 80vw;
+    max-width: 980px;
+    background-color: #fd27b9;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+.formcontainer {
+    width: 100%;
+    padding: 5px;
+}
+.formlabel {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    padding: 5px;
+}
+
+
+.error {
+    color: rgb(52, 43, 146);
+    padding-left: 5px;
+}
+
+
+#detail{
+    border: none;
+}
+table {
+    border-collapse: collapse
+}
+
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid black;
+}
+
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+.img-container {
+  float: left;
+  width: 100%;
+  padding: 20px;
+}
+
+
+.clearfix{
+    align-items: center;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+.results{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}

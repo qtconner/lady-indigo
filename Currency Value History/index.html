@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Currency Value History">
+    <meta name="keywords" content="HTML, CSS,JavaScript, AJAX, jQuery">
+    <meta name="author" content="Auna Conner">
+    <title>Currency Value History</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+</head>
+<body>
+    <form id="myform" onsubmit="return false">
+        <div class="formcontainer">
+            <h1>Currency Value History</h1>
+
+
+            <label class="formlabel" for="baseCurrency">Base Currency: </label>
+            <select name="baseCurrency" id="baseCurrency"                
+                    data-rule-required="true" data-msg-required="Base Currency is Required">
+                <option value="">Select a Base Currency...</option>
+                <option value="USD">US Dollar</option>
+                <option value="EUR">Euro</option>
+                <option value="JPY">Japanese Yen</option>
+                <option value="GBP">British Pound Sterling</option>
+                <option value="CNY">Chinese Renminbi</option>
+            </select>
+            <label id="baseCurrencyError" for="baseCurrency" class="error"></label><br>
+
+
+            <label class="formlabel" for="toCurrency">Convert to Currency: </label>
+            <select name="toCurrency" id="toCurrency"                
+                    data-rule-required="true" data-msg-required="Convert to Currency is Required">
+                <option value="">Select a Currency to Convert to...</option>
+                <option value="USD">US Dollar</option>
+                <option value="EUR">Euro</option>
+                <option value="JPY">Japanese Yen</option>
+                <option value="GBP">British Pound Sterling</option>
+                <option value="CNY">Chinese Renminbi</option>
+            </select>
+            <label id="toCurrencyError" for="toCurrency" class="error"></label><br>
+           
+            <label for="FromDate" class="formlabel">From Date:</label>
+            <input type="date" name="FromDate" id="FromDate"
+                data-rule-required="true" data-msg-required="From Date is Required">
+            <label id="FromDateError" for="FromDate" class="error"></label><br>
+
+
+            <label for="ToDate" class="formlabel">To Date:</label>
+            <input type="date" name="ToDate" id="ToDate"
+                 data-rule-required="true" data-msg-required="To Date is Required">
+            <label id="ToDateError" for="ToDate" class="error"></label><br><br>
+
+
+            <input type="submit" value="Show Results" id="showResults" name="showResults" onclick="convCurrency();">
+            <input type="submit" formnovalidate value="Clear" id="Clear" name="Clear" onclick="ClearForm();">
+       
+            <div class="clearfix">
+                <div class="img-container">
+                    <canvas id="chartjs" width="400" height="400"></canvas>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="assets/js/convert.js"></script>
+</body>
+</html>
